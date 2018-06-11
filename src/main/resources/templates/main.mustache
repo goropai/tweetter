@@ -1,6 +1,25 @@
 <html>
 <body>
-<div>{{some}}</div>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Enter message here">
+        <input type="text" name="tag" placeholder="Enter tag here">
+        <button type="submit">Add message</button>
+    </form>
+</div>
+<div><h1>List of messages</h1></div>
+<form method="post" action="/filter">
+    <input type="text" name="filter">
+    <button type="submit">Find</button>
+</form>
+{{#messages}}
+    <div>
+        <span>{{id}}</span>
+        <span>{{text}}</span>
+        <i><span>{{tag}}</span></i>
+    </div>
+{{/messages}}
+<a href="/">Full list of messages</a>
 <a href="/greeting">link</a>
 </body>
 </html>
